@@ -37,18 +37,18 @@ public class LibroDAOImpl implements LibroDAO {
 
 	@Override
 	@Transactional
-	public void add(Libro Libro) {
+	public void add(Libro libro) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(Libro);
+		session.saveOrUpdate(libro);
 	}
 
 	@Override
 	@Transactional
-	public void up(Libro Libro) {
+	public void up(Libro libro) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(Libro);
+		session.saveOrUpdate(libro);
 	}
 
 	@Override

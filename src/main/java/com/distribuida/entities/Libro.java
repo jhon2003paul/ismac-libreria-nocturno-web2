@@ -30,7 +30,7 @@ public class Libro {
 	private String edicion;
 	@Column(name = "idioma")
 	private String idioma;
-	@Column(name = "fechaPublicacion")
+	@Column(name = "fecha_publicacion")
 	private Date fechaPublicacion;
 	@Column(name = "descripcion")
 	private String descripcion;
@@ -95,6 +95,7 @@ public class Libro {
 		this.categoria = categoria;
 		this.autor = autor;
 	}
+	
 
 	public int getIdLibro() {
 		return idLibro;

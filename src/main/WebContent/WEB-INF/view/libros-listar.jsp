@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@	taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,14 +61,14 @@
 		<td>${item.numPaginas}</td>
 		<td>${item.edicion}</td>
 		<td>${item.idioma}</td>
-		<td>${item.fechaPublicacion}</td>
+		<td>${fn:substring(item.fechaPublicacion,0,10)}</td>
 		<td>${item.descripcion}</td>
 		<td>${item.tipoPasta}</td>
-		<td>${item.isbn}</td>
+		<td>${item.iSBN}</td>
 		<td>${item.numEjemplares}</td>
 		<td>
 		
-		<img alt="foto.jpg" width="100" height="100" src="/ismac-libreria-matutino-web/resources/img/${item.portada}"> 
+		<img alt="foto.jpg" width="100" height="100" src="/ismac-libreria-online-web/resources/img/${item.portada}"> 
 		
 		</td>
 		<td>${item.presentacion}</td>
@@ -75,8 +77,8 @@
 		<td>${item.autor.nombre} ${item.autor.apellido}</td>
 		
 		<td>
-			<button type="button" onclick="window.location.href='/ismac-libreria-online-web/libros/findOne?opcion=1&idLibro=${item.idLibro}';return false;">Actualiar</button>
-			<button type="button" onclick="window.location.href='/ismac-libreria-online-web/libros/findOne?opcion=2&idLibro=${item.idLibro}';return false;">Borrar</button>
+			<button onclick="window.location.href='/ismac-libreria-online-web/libros/findOne?opcion=1&idLibro=${item.idLibro}';return false;">Actualiar</button>
+			<button onclick="window.location.href='/ismac-libreria-online-web/libros/findOne?opcion=2&idLibro=${item.idLibro}';return false;">Borrar</button>
 					
 		</td>
 	</tr>

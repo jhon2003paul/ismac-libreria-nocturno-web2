@@ -9,54 +9,56 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.distribuida.entities.Libro;
+import com.distribuida.entities.FacturaDetalle;
 
 
 @Repository
-public class FacturaDetalleDAOImpl implements LibroDAO {
-	
+public class FacturaDetalleDAOImpl implements FacturaDetalleDAO {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	@Override
-	@Transactional
-	public List<Libro> findAll() {
-		// TODO Auto-generated method stub
+	@Transactional 
+	public List<FacturaDetalle> findAll() {
+		
 		Session session = sessionFactory.getCurrentSession();
-		return session.createQuery("FROM Libro", Libro.class).getResultList();
+		return session.createQuery("FROM FacturaDetalle", FacturaDetalle.class).getResultList();
 	}
 
 	@Override
-	@Transactional
-	public Libro findOne(int id) {
-		// TODO Auto-generated method stub
-		Session session = sessionFactory.getCurrentSession();		
-		return session.get(Libro.class, id);
-	}
-
-	@Override
-	@Transactional
-	public void add(Libro Libro) {
-		// TODO Auto-generated method stub
+	@Transactional 
+	public FacturaDetalle findOne(int id) {
+		
 		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(Libro);
+		return session.get(FacturaDetalle.class, id); 
 	}
 
 	@Override
-	@Transactional
-	public void up(Libro Libro) {
-		// TODO Auto-generated method stub
+	@Transactional 
+	public void add(FacturaDetalle facturadetalle) {
+		
 		Session session = sessionFactory.getCurrentSession();
-		session.saveOrUpdate(Libro);
+		session.saveOrUpdate(facturadetalle);
+
 	}
 
 	@Override
-	@Transactional
+	@Transactional 
+	public void up(FacturaDetalle facturadetalle) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		session.saveOrUpdate(facturadetalle);
+
+	}
+
+	@Override
+	@Transactional 
 	public void del(int id) {
-		// TODO Auto-generated method stub
+		
 		Session session = sessionFactory.getCurrentSession();
 		session.delete(findOne(id));
+
 	}
 
 }

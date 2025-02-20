@@ -9,9 +9,9 @@ public interface LibroDAO {
 	
 	public Libro findOne(int id);
 	
-	public void add(Libro Libro);
+	public void add(Libro libro);
 	
-	public void up(Libro Libro);
+	public void up(Libro libro);
 	
 	public void del(int id);
 }

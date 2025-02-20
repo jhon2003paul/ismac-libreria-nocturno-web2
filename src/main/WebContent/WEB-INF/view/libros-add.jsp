@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +31,7 @@
 		<input type="text" id="idioma" name="idioma" value="${libro.idioma}">
 		<br>
 		Fecha de Publicación
-		<input type="date" id="fechaPublicacion" name="fechaPublicacion" value="${libro.fechaPublicacion)}">
+		<input type="date" id="fechaPublicacion" name="fechaPublicacion" value="${fn:substring(libro.fechaPublicacion,0,10)}">
 		<br>
 		Descripción
 		<input type="text" id="descripcion" name="descripcion" value="${libro.descripcion}">
@@ -38,7 +40,7 @@
 		<input type="text" id="tipoPasta" name="tipoPasta" value="${libro.tipoPasta}">
 		<br>
 		ISBN
-		<input type="text" id="isbn" name="isbn" value="${libro.isbn}">
+		<input type="text" id="iSBN" name="iSBN" value="${libro.iSBN}">
 		<br>
 		Numero de Ejemplares
 		<input type="number" id="numEjemplares" name="numEjemplares" value="${libro.numEjemplares}">
@@ -52,18 +54,18 @@
 		Precio
 		<input type="number" step="any" id="precio" name="precio" value="${libro.precio}">
 		<br>
-		Categoria
+	Categoria
 		<select id="idCategoria" name="idCategoria" >
-			<c:forEach var="item" items="${categorias}">					
-				<option id="" value="${item.idCategoria}" ${item.idCategoria == libro.categoria.idCategoria ? 'selected': '' }  >${item.categoria}</option>			
+                <c:forEach var="item" items="${categorias}">
+                    <option value="${item.idCategoria}">${item.categoria ==libro.categoria ? 'selected': ''} >${item.categoria}</option>		
 			</c:forEach>
 		</select>
 		<br>
 		Autor
 		<select id="idAutor" name="idAutor" >
-			<c:forEach var="item" items="${autores}">			
-			<option id="" value="${item.idAutor}" ${item.idAutor == libro.autor.idAutor? 'selected': ''} >${item.nombre} ${item.apellido}</option>		
-			</c:forEach>
+	               <c:forEach var="item" items="${autores}">
+                    <option value="${item.idAutor}" ${item.idAutor == libro.autor.idAutor ? 'selected': '' } }>${item.nombre} ${item.apellido}</option>			
+                    </c:forEach>
 		</select>
 		<br>
 		
