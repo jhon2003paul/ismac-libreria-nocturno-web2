@@ -22,8 +22,9 @@
             
             <div class="container" style="text-align: center; padding-bottom: 5px;">
             
-            <button class="btn btn-primary "onclick="window.location.href='/ismac-libreria-online-web/clientes/findOne?opcion=1'; return false;">Agregar</button>
-				
+            <button class="btn btn-primary" id="btnAgregar" name="btnAgregar">
+            Agregar
+            </button>
             </div>
 			      
 				<div class="container table-responsive">
@@ -68,8 +69,8 @@
            <footer></footer>
 
 	
-	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.hundle.min.js"></script>
-    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.7.1.min"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap-table.min.js"></script>
      <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap-table-es-MX.min.js"></script>
@@ -86,7 +87,12 @@
      });
     	 
      
-     
+     $('#btnAgregar').on('click',function(){
+    	 
+    	 window.location.href='${pageContext.request.contextPath}/clientes/findOne?opcion=1'; 
+			
+    	 
+     });
  
      </script>
 </body>

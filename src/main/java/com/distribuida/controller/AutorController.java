@@ -44,8 +44,8 @@ public class AutorController {
 		}
 		
 		
-		if(opcion == 1) return "Autores-add";
-		else return "Autores-del";
+		if(opcion == 1) return "autores-add";
+		else return "autores-del";
 	}
 	
 	@PostMapping("/add")
@@ -66,7 +66,7 @@ public class AutorController {
 			autorDAO.up(autor2);
 		}
 		
-		return "redirect:/Autores/findAll";
+		return "redirect:/autores/findAll";
 	}
 	
 	@GetMapping("/del")
@@ -74,7 +74,7 @@ public class AutorController {
 		
 		autorDAO.del(idAutor);
 		
-		return "redirect:/Autores/findAll";
+		return "redirect:/autores/findAll";
 	}
 	
 		
