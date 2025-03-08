@@ -62,7 +62,7 @@ public class CategoriaController {
 			CategoriaDAO.up(categoria2);
 		}
 		
-		return "redirect:/Categorias/findAll";
+		return "redirect:/categorias/findAll";
 	}
 	
 	@GetMapping("/del")
@@ -70,7 +70,7 @@ public class CategoriaController {
 		
 		CategoriaDAO.del(idCategoria);
 		
-		return "redirect:/Categorias/findAll";
+		return "redirect:/categorias/findAll";
 	}
 	
 		

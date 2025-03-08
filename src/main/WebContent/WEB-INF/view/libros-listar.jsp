@@ -81,24 +81,30 @@
 		<td>${item.autor.nombre} ${item.autor.apellido}</td>
 		
 		<td>
-			<button class="btn btn-sucess" onclick="window.location.href='/ismac-libreria-online-web/libros/findOne?opcion=1&idLibro=${item.idLibro}';return false;">Actualiar</button>
-			<i class="fras fa-sync"></i>
-			<button class="btn btn-danger"  onclick="window.location.href='/ismac-libreria-online-web/libros/findOne?opcion=2&idLibro=${item.idLibro}';return false;">Borrar</button>
+			      <button class="btn btn-success" onclick="window.location.href='/ismac-libreria-online-web/libros/findOne?opcion=1&idLibro=${item.idLibro}'; return false;">
+                       <i class="fas fa-pen-to-square"></i> Actualizar
+                   </button>
+			  
+			   <i class="fras fa-sync"></i>
+			    <button class="btn btn-danger" onclick="window.location.href='/ismac-libreria-online-web/libros/findOne?opcion=2&idLibro=${item.idLibro}';return false;">
+                <i class="fas fa-trash-alt"></i> Borrar
+                </button>
+
 					
-		</td>
-	</tr>
-</c:forEach>
+		 </td>
+	     </tr>
+         </c:forEach>
 
 
-</tbody>
-</table>
+    </tbody>
+    </table>
          
          
          </div>
 
    
 
-</section>
+     </section>
 
 
       <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.bundle.min.js"></script>
